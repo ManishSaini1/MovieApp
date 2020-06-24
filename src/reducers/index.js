@@ -1,8 +1,9 @@
-import {ADD_MOVIES, ADD_FAVOURITE, UN_FAVOURITE} from '../actions';
+import {ADD_MOVIES, ADD_FAVOURITE, UN_FAVOURITE, SET_SHOW_FAVOURITES} from '../actions';
 const initialMoviesState=
 {
     list  :[],
-    favourites: []
+    favourites: [],
+    showFavourites :false
 }
 export default function movies(state=initialMoviesState,action)
 {
@@ -37,6 +38,12 @@ export default function movies(state=initialMoviesState,action)
                 favourites :filteredArray
 
             }  
+        case SET_SHOW_FAVOURITES:
+            console.log("HEre in reducerssss", action.value);
+            return {
+                ...state,
+                showFavourites :action.value
+            }
             default:
                 return state;
     }
