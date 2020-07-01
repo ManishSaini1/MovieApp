@@ -5,8 +5,10 @@ class MovieCard extends React.Component
 {
     handleFavouriteClick=()=>
     {
-        console.log('Movie card', this.props.movie);
+        // console.log("In calling Favourite function",console.log(this.props.dispatch));
+        // console.log('Movie card', this.props.movie);
         const {movie}= this.props;
+        console.log("in aDding Fav" ,this.props);
         this.props.dispatch(addFavourite(movie));
         
     }
